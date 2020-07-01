@@ -33,5 +33,7 @@ public class Usuario implements Serializable{
 	private String senha;
 	
 	private String email;
+	
+	private boolean ativo;
 
 }

@@ -3,6 +3,7 @@ package com.project.Protect.controller;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -45,9 +46,13 @@ public class UsuarioController {
 	@PutMapping("/{id}")
 	public ResponseEntity<Usuario> update(@RequestBody Usuario usuario, @PathVariable Integer id)
 			throws URISyntaxException {
-		usuario.setId(id);
-		usuarioService.update(usuario);
+		usuarioService.update(usuario, id);
 		return ResponseEntity.ok().body(usuario);
+	}
+	
+	@GetMapping("/ativos")
+	public Stream<Usuario> produtosAtivos() {
+		return usuarioService.findAtivos();
 	}
 
 }

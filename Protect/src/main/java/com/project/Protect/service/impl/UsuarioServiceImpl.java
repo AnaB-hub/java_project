@@ -2,6 +2,7 @@ package com.project.Protect.service.impl;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	
 	@Override
 	public Usuario save(Usuario usuario) {
+		usuario.setAtivo(true);
 		return usuarioRepository.save(usuario);
 	}
 
@@ -33,8 +35,15 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 
 	@Override
-	public Usuario update(Usuario usuario) {
+	public Usuario update(Usuario usuario, Integer id) {
+		usuario.setId(id);
 		return usuarioRepository.save(usuario);
+	}
+
+	@Override
+	public Stream<Usuario> findAtivos() {
+		List<Usuario> usuarios = usuarioRepository.findAll();
+		return usuarios.stream().filter(p -> p.isAtivo() == true);
 	}
 
 }

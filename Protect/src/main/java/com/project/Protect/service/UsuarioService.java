@@ -3,6 +3,7 @@ package com.project.Protect.service;
 import java.util.List;
 
 import com.project.Protect.entities.Usuario;
+import java.util.stream.Stream;
 
 public interface UsuarioService {
 	
@@ -12,6 +13,8 @@ public interface UsuarioService {
 
 	public List<Usuario> getUsuarios();
 
-	public Usuario update(Usuario usuario);
+	public Usuario update(Usuario usuario, Integer id);
+
+	public Stream<Usuario> findAtivos();
 
 }
