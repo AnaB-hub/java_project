@@ -1,3 +1,5 @@
+drop table tb_usuario
+
 CREATE TABLE tb_usuario (
 	id serial not null,
 	nome character varying (100) not null,
@@ -7,3 +9,10 @@ CREATE TABLE tb_usuario (
 	constraint pk_usuario primary key (id)
 );
 
+CREATE TABLE tb_pergunta (
+	id serial not null,
+	categoria int,
+	titulo character varying(100),
+	pergunta character varying(1000),
+	constraint pk_pergunta primary key (id)
+);
