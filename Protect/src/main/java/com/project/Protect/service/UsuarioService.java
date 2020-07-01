@@ -17,4 +17,6 @@ public interface UsuarioService {
 
 	public Stream<Usuario> findAtivos();
 
+	public void logiacalExclusion(Integer id);
+
 }

@@ -54,5 +54,10 @@ public class UsuarioController {
 	public Stream<Usuario> ativos() {
 		return usuarioService.findAtivos();
 	}
+	
+	@GetMapping("/delete/{id}")
+	public void logicalExclusion(@PathVariable(value = "id") int id) {
+		usuarioService.logiacalExclusion(id);
+	}
 
 }

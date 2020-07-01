@@ -46,4 +46,14 @@ public class UsuarioServiceImpl implements UsuarioService{
 		return usuarios.stream().filter(p -> p.isAtivo() == true);
 	}
 
+	@Override
+	public void logiacalExclusion(Integer id) {
+		Optional<Usuario> usuario = usuarioRepository.findById(id);
+		Usuario user = usuario.orElse(null);
+		if (user != null) {
+			user.setAtivo(false);
+			usuarioRepository.save(user);			
+		}
+	}
+
 }
