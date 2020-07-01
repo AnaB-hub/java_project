@@ -51,7 +51,7 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("/ativos")
-	public Stream<Usuario> produtosAtivos() {
+	public Stream<Usuario> ativos() {
 		return usuarioService.findAtivos();
 	}
 
