@@ -23,8 +23,9 @@ public class UsuarioController {
 	private UsuarioService usuarioService;
 	
 	@PostMapping
-	public Usuario save(@RequestBody Usuario usuario) {
-		return usuarioService.save(usuario);
+	public ResponseEntity<Usuario> saveCurso(@RequestBody Usuario user) throws URISyntaxException {
+		Usuario novo = usuarioService.save(user);
+		return ResponseEntity.created(new URI(("/usuario/salvar/" + novo.getId()))).body(novo);
 	}
 	
 	@GetMapping
