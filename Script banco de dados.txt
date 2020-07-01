@@ -1,0 +1,9 @@
+CREATE TABLE tb_usuario (
+	id serial not null,
+	nome character varying (100) not null,
+	cpf character varying (11) not null,
+	senha character varying (100) not null,
+	email character varying (100),
+	constraint pk_usuario primary key (id)
+);
+
