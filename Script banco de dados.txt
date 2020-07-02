@@ -16,3 +16,10 @@ CREATE TABLE tb_pergunta (
 	pergunta character varying(1000),
 	constraint pk_pergunta primary key (id)
 );
+
+CREATE TABLE tb_categoria (
+	id serial not null,
+	nome character varying(100),
+	ativo boolean,
+	constraint pk_categoria primary key (id)
+);
