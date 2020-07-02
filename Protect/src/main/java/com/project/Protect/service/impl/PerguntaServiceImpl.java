@@ -20,4 +20,9 @@ public class PerguntaServiceImpl implements PerguntaService {
 		return perguntaRepository.findAll();
 	}
 
+	@Override
+	public Pergunta save(Pergunta pergunta) {
+		return perguntaRepository.save(pergunta);
+	}
+
 }

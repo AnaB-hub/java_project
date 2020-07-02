@@ -8,4 +8,6 @@ public interface PerguntaService {
 
 	List<Pergunta> getPerguntas();
 
+	Pergunta save(Pergunta pergunta);
+
 }
