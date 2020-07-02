@@ -19,7 +19,7 @@ import com.project.Protect.entities.Pergunta;
 import com.project.Protect.service.PerguntaService;
 
 @RestController
-@RequestMapping(value = "/pergunta")
+@RequestMapping(value = "/question")
 public class PerguntaController {
 	
 	@Autowired
