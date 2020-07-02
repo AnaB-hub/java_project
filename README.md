@@ -13,4 +13,4 @@ Esse será o backend do repositório https://github.com/AnaB-hub/react_project.
 * Spring Framework 2.3.1
 * Lombok
 * Postgresql
-
+* Git Flow
