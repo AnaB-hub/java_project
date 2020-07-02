@@ -19,7 +19,7 @@ import com.project.Protect.entities.Usuario;
 import com.project.Protect.service.UsuarioService;
 
 @RestController
-@RequestMapping(value = "/usuario")
+@RequestMapping(value = "/user")
 public class UsuarioController {
 	
 	@Autowired

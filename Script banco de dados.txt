@@ -6,6 +6,7 @@ CREATE TABLE tb_usuario (
 	cpf character varying (11) not null,
 	senha character varying (100) not null,
 	email character varying (100),
+	ativo boolean,
 	constraint pk_usuario primary key (id)
 );
 
@@ -14,6 +15,7 @@ CREATE TABLE tb_pergunta (
 	categoria int,
 	titulo character varying(100),
 	pergunta character varying(1000),
+	ativo boolean,
 	constraint pk_pergunta primary key (id)
 );
 
