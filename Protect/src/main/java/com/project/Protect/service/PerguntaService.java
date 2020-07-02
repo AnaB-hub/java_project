@@ -17,4 +17,6 @@ public interface PerguntaService {
 
 	Pergunta update(Pergunta pergunta, Integer id);
 
+	Pergunta logiacalExclusion(int id);
+
 }

@@ -46,4 +46,16 @@ public class PerguntaServiceImpl implements PerguntaService {
 		return perguntaRepository.save(pergunta);
 	}
 
+	@Override
+	public Pergunta logiacalExclusion(int id) {
+		Optional<Pergunta> pergunta = perguntaRepository.findById(id);
+		Pergunta perg = pergunta.orElse(null);
+		Pergunta nova = null;
+		if (perg != null) {
+			perg.setAtivo(false);
+			nova = perguntaRepository.save(perg);			
+		}
+		return nova;
+	}
+
 }

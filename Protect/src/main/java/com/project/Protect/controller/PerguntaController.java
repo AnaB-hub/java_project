@@ -54,5 +54,11 @@ public class PerguntaController {
 		perguntaService.update(pergunta, id);
 		return ResponseEntity.ok().body(pergunta);
 	}
+	
+	@GetMapping("/delete/{id}")
+	public ResponseEntity<Pergunta> logicalExclusion(@PathVariable(value = "id") int id) {
+		Pergunta perg = perguntaService.logiacalExclusion(id);
+		return ResponseEntity.ok().body(perg);
+	}
 
 }
