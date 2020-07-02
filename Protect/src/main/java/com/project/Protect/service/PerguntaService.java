@@ -13,4 +13,6 @@ public interface PerguntaService {
 
 	Stream<Pergunta> findAtivos();
 
+	Pergunta findById(Integer id);
+
 }

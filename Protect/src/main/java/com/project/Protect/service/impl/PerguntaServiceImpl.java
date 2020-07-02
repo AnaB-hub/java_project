@@ -1,6 +1,7 @@
 package com.project.Protect.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,12 @@ public class PerguntaServiceImpl implements PerguntaService {
 	public Stream<Pergunta> findAtivos() {
 		List<Pergunta> lista = perguntaRepository.findAll();
 		return lista.stream().filter(p -> p.isAtivo() == true);
+	}
+
+	@Override
+	public Pergunta findById(Integer id) {
+		Optional<Pergunta> pergunta = perguntaRepository.findById(id);
+		return pergunta.orElse(null);
 	}
 
 }
