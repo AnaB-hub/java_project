@@ -15,4 +15,6 @@ public interface PerguntaService {
 
 	Pergunta findById(Integer id);
 
+	Pergunta update(Pergunta pergunta, Integer id);
+
 }

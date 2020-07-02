@@ -40,4 +40,10 @@ public class PerguntaServiceImpl implements PerguntaService {
 		return pergunta.orElse(null);
 	}
 
+	@Override
+	public Pergunta update(Pergunta pergunta, Integer id) {
+		pergunta.setId(id);
+		return perguntaRepository.save(pergunta);
+	}
+
 }

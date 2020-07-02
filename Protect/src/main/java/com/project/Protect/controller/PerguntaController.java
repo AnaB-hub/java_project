@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,6 +46,13 @@ public class PerguntaController {
 	public ResponseEntity<Pergunta> save(@RequestBody Pergunta pergunta) throws URISyntaxException {
 		Pergunta perg = perguntaService.save(pergunta);
 		return ResponseEntity.created(new URI(("/pergunta/salvar/" + perg.getId()))).body(perg);
+	}
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<Pergunta> update(@RequestBody Pergunta pergunta, @PathVariable Integer id)
+			throws URISyntaxException {
+		perguntaService.update(pergunta, id);
+		return ResponseEntity.ok().body(pergunta);
 	}
 
 }
