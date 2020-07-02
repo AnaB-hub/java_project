@@ -31,5 +31,7 @@ public class Pergunta implements Serializable {
 	private String titulo;
 	
 	private String pergunta;
+	
+	private boolean ativo;
 
 }

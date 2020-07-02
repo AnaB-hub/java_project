@@ -1,6 +1,7 @@
 package com.project.Protect.service.impl;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,14 @@ public class PerguntaServiceImpl implements PerguntaService {
 
 	@Override
 	public Pergunta save(Pergunta pergunta) {
+		pergunta.setAtivo(true);
 		return perguntaRepository.save(pergunta);
+	}
+
+	@Override
+	public Stream<Pergunta> findAtivos() {
+		List<Pergunta> lista = perguntaRepository.findAll();
+		return lista.stream().filter(p -> p.isAtivo() == true);
 	}
 
 }
