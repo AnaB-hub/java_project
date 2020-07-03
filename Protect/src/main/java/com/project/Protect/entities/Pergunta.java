@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -26,11 +27,14 @@ public class Pergunta implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
+	@NotNull(message = "A categoria não pode ser nula")
 	private Integer categoria;
 	
+	@NotNull(message = "O título não pode ser nulo")
 	private String titulo;
 	
-	private String pergunta;
+	@NotNull(message = "A pergunta não pode ser nula")
+    private String pergunta;
 	
 	private boolean ativo;
 

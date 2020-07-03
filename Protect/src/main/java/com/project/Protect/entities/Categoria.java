@@ -7,10 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import lombok.Setter;
+import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tb_categoria")
@@ -27,6 +27,7 @@ public class Categoria implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
+	@NotNull(message = "O nome não pode ser nulo")
 	private String nome;
 	
 	private boolean ativo;
